@@ -61,7 +61,9 @@ eventNewPlayer = function(playerName)
 	players = players + 1
 	tfm.exec.chatMessage("<N>Welcome to <ROSE>#crowdsurf<N>. Survive or win to become the next shaman! Type <ROSE>!help</ROSE> for more info.", playerName)
 end
-table.foreach(tfm.get.room.playerList, eventNewPlayer)
+for playerName in next, tfm.get.room.playerList do
+	eventNewPlayer(playerName)
+end
 
 eventPlayerLeft = function()
 	players = players - 1
