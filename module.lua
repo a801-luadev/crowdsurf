@@ -61,9 +61,7 @@ eventNewPlayer = function(playerName)
 	players = players + 1
 	tfm.exec.chatMessage("<N>Welcome to <ROSE>#crowdsurf<N>. Survive or win to become the next shaman! Type <ROSE>!help</ROSE> for more info.", playerName)
 end
-for playerName in next, tfm.get.room.playerList do
-	eventNewPlayer(playerName)
-end
+table.foreach(tfm.get.room.playerList, eventNewPlayer)
 
 eventPlayerLeft = function()
 	players = players - 1
@@ -87,6 +85,11 @@ eventNewGame = function()
 
 	if not toReload then
 		local xml = tfm.get.room.xmlMapInfo.xml
+
+		if shaman then -- Gives cheese to the winner
+			tfm.exec.giveCheese(shaman)
+			tfm.exec.playerVictory(shaman)
+		end
 
 		if string.find(xml, "T=\"9\"") or string.find(xml, "T=\"15\"") then -- water or web doesn't disappear with the attribute v
 			skipMap()
