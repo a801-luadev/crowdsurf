@@ -244,7 +244,7 @@ end
 
 eventChatCommand = function(playerName, command)
 	if command == "help" then
-		tfm.exec.chatMessage("<ROSE>Module rewritten by <N>Bolodefchoco</N> and initially released by <N>Baasbase#0095</N>.\nGame modes: <N>#crowdsurf0fast</N>, <N>#crowdsurf0noshaman</N>, <N>#crowdsurf0nocollision</N>\n<ROSE>Discord: https://discord.gg/quch83R", playerName)
+		tfm.exec.chatMessage("<ROSE>Module rewritten by <N>Bolodefchoco#0015</N> and initially released by <N>Baasbase#0095</N>.\nGame modes: <N>#crowdsurf0fast</N>, <N>#crowdsurf0noshaman</N>, <N>#crowdsurf0nocollision</N>\n<ROSE>Discord: https://discord.gg/quch83R", playerName)
 	elseif command == "mort" then
 		tfm.exec.killPlayer(playerName)
 	end
